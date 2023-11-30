@@ -11,18 +11,33 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import java.util.Optional;
-
+/**
+ * Library Management System GUI Application.
+ * This application manages a library system using a graphical interface.
+ *
+ * @author Zohaib Ahmadzai
+ * @version CEN-3024C
+ * @since 11/12/2023
+ */
 
 public class LMSGui extends Application {
 
     private Library library;
     private TextArea textArea;
     private TableView<Library.Book> tableView;
-
+    /**
+     * Main method to launch the application.
+     *
+     * @param args Command-line arguments
+     */
     public static void main(String[] args) {
         launch(args);
     }
-
+    /**
+     * Initializes the GUI components and starts the application.
+     *
+     * @param primaryStage The primary stage of the application
+     */
     @Override
     public void start(Stage primaryStage) {
         library = new Library();
@@ -156,8 +171,14 @@ public class LMSGui extends Application {
         });
     }
 
+    /**
+     * Refreshes the table data.
+     */
     private void refreshTableData() {
         tableView.getItems().clear();
         tableView.getItems().addAll(library.getBooks());
     }
 }
+
+
+
