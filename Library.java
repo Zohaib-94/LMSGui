@@ -18,21 +18,38 @@ import java.sql.SQLException;
 
 public class Library {
     private List<Book> books = new ArrayList<>();
-
+    /**
+     * Adds a book to the library.
+     *
+     * @param book The book to be added
+     */
     public void addBook(Book book) {
         books.add(book);
     }
+    /**
+     * Retrieves a list of all books in the library.
+     *
+     * @return The list of books in the library
+     */
 
     public List<Book> getBooks() {
         return books;
     }
+    /**
+     * Removes a book from the library based on its title.
+     *
+     * @param title The title of the book to be removed
+     * @return True if the book is successfully removed, false otherwise
+     */
 
     public boolean removeBookByTitle(String title) {
 
         return false;
     }
 
-
+    /**
+     * Loads books from the database and populates the library.
+     */
 
     public void loadBooksFromDatabase() {
 
@@ -58,15 +75,27 @@ public class Library {
             e.printStackTrace();
         }
     }
-
+    /**
+     * Checks out a book from the library based on its title.
+     *
+     * @param title The title of the book to be checked out
+     * @return True if the book is successfully checked out, false otherwise
+     */
     public boolean checkOutBookByTitle(String title) {
         return false;
     }
-
+    /**
+     * Checks in a book to the library based on its title.
+     *
+     * @param title The title of the book to be checked in
+     * @return True if the book is successfully checked in, false otherwise
+     */
     public boolean checkInBook(String title) {
         return false;
     }
-
+    /**
+     * Represents a Book with its attributes: barcode, title, author, and availability status.
+     */
     public static class Book {
         private String barcode;
         private String title;
