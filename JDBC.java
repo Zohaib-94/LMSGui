@@ -11,13 +11,19 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class JDBC {
+    /**
+     * Main method to demonstrate JDBC connection, statement execution, and result retrieval.
+     *
+     * @param args Command-line arguments
+     */
+
     public static void main(String[] args) {
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
 
         try {
-
+            // Load the JDBC driver
             Class.forName("org.sqlite.JDBC");
 
 
