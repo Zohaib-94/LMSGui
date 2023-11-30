@@ -1,16 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?>
+package com.example.lmsgui;
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.lmsgui.HelloController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
+import java.io.IOException;
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+public class HelloApplication extends Application {
+    /**
+     *  The application by loading the FXML view.
+     *
+     * @param stage The primary stage for the application
+     * @throws IOException If an error occurs during loading
+     */
+    @Override
+    public void start(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
+    }
+    /**
+     * The main method to launch the application.
+     *
+     * @param args Command-line arguments
+     */
+    public static void main(String[] args) {
+        launch();
+    }
+}
